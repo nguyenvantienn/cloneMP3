@@ -71,7 +71,7 @@ const Player =({setShowSidebarRight}) =>{
         audio.currentTime = 0;
         audio.volume = +volume /100 ;
         setVolume(prev=>{
-            console.log(prev + typeof +prev);
+            // console.log(prev + typeof +prev);
             return +prev;
         });
         //Load propress Bar
@@ -123,7 +123,6 @@ const Player =({setShowSidebarRight}) =>{
     //Set Volume
     useEffect(()=>{
         audio.volume = +volume /100 ;
-        console.log(audio.volume);
         if(volume >0){
             volumeRef.current = volume;
         }
