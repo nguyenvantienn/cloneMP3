@@ -19,7 +19,7 @@ const Player =({setShowSidebarRight}) =>{
     const [isShuffle,setIsShuffle] = useState(false);
     const [repeatMode,setRepeatMode] = useState(0);
     const [isLoadedSource,setIsLoadedSource] = useState(true)
-    const [volume,setVolume] = useState(70);
+    const [volume,setVolume] = useState(50);
     const [audio,setAudio] = useState(new Audio())
     
     const {curSongId,isPlaying,playlist} = useSelector(state => state.music);
@@ -69,18 +69,33 @@ const Player =({setShowSidebarRight}) =>{
         audio?.pause(); 
         audio?.load();
         audio.currentTime = 0;
-        setVolume(prev=>prev);
+        audio.volume = +volume /100 ;
+        setVolume(prev=>{
+            console.log(prev + typeof +prev);
+            return +prev;
+        });
+        //Load propress Bar
+        intervalId = setInterval(()=>{
+            let percent;
+            percent = Math.round(audio?.currentTime *10000/ songInfo?.duration)/100;
+            // console.log(percent);
+            if(thumbRef.current){
+                thumbRef.current.style.cssText = `right : ${100 - percent}%`;
+            }
+            // console.log(audio.currentTime)
+            setCurSeconds(Math.round(audio?.currentTime));
+        },400)
         if (isPlaying) {
             audio?.play();
             //Load propress Bar
-            intervalId = setInterval(()=>{
-                let percent;
-                percent = Math.round(audio?.currentTime *10000/ songInfo.duration)/100;
-                // console.log(percent);
-                thumbRef.current.style.cssText = `right : ${100 - percent}%`;
-                // console.log(audio.currentTime)
-                setCurSeconds(Math.round(audio?.currentTime));
-            },400)
+            // intervalId = setInterval(()=>{
+            //     let percent;
+            //     percent = Math.round(audio?.currentTime *10000/ songInfo.duration)/100;
+            //     // console.log(percent);
+            //     thumbRef.current.style.cssText = `right : ${100 - percent}%`;
+            //     // console.log(audio.currentTime)
+            //     setCurSeconds(Math.round(audio?.currentTime));
+            // },400)
         }
     },[audio])
 
@@ -107,7 +122,8 @@ const Player =({setShowSidebarRight}) =>{
 
     //Set Volume
     useEffect(()=>{
-        audio.volume = volume /100 ;
+        audio.volume = +volume /100 ;
+        console.log(audio.volume);
         if(volume >0){
             volumeRef.current = volume;
         }
@@ -244,8 +260,8 @@ const Player =({setShowSidebarRight}) =>{
                 <input 
                     title={volume}
                     type="range" step={1} min ={0} max={100}
-                    value={volume}
-                    onChange ={(e)=>{setVolume(e.target.value)}}
+                    value={+volume}
+                    onChange ={(e)=>{setVolume(+e.target.value)}}
                 />
                 <span 
                     className="p-1 rounded-sm bg-main-500 opacity-80 hover:opacity-100 cursor-pointer"
