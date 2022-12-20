@@ -71,7 +71,6 @@ const Player =({setShowSidebarRight}) =>{
         audio.currentTime = 0;
         audio.volume = +volume /100 ;
         setVolume(prev=>{
-            // console.log(prev + typeof +prev);
             return +prev;
         });
         //Load propress Bar
