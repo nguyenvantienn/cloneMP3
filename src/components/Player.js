@@ -101,12 +101,12 @@ const Player =({setShowSidebarRight}) =>{
     useEffect(()=>{
         const handleEnded = ()=>{
             // console.log('end');
-            if(isShuffle){
-                // console.log('Shuffle');
-                handleShuffle()
-            }else if(repeatMode){
+            if(repeatMode){
                 // console.log('repeat')
                 repeatMode === 2? handleRepeatOne() : handleClickNextSong();
+            }else if(isShuffle){
+                // console.log('Shuffle');
+                handleShuffle()
             }else{
                 audio.pause();
                 dispatch(actions.play(false))

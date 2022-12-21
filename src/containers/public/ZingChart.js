@@ -146,22 +146,6 @@ const ZingChart = () =>{
                     <div className='px-[60px] mt-12'>
                         <RankWeek data={chartData?.RTChart?.items} hidenTitle={false}/>
                     </div>
-                    {/* <div className='px-[60px] mt-12'>
-                        {chartData?.RTChart?.items?.filter((item,i)=>showAll?true:i<10)?.map((item,index)=>(
-                            <List 
-                                songData = {item}
-                                key={item.encodeId}
-                                hiden
-                                order= {index + 1}
-                            />
-                        ))}
-                    </div>
-                    <button
-                        className='px-4 py-2 border border-[#0E8080] w-[150px] mx-auto bg- text-main-500 rounded-l-full rounded-r-full text-16 hover:text-white hover:bg-main-500'
-                        onClick={()=>{setShowAll(prev=>!prev)}}
-                    >
-                        {showAll?'Ẩn bớt':'Xem tất cả'}
-                    </button> */}
                     <div className='relative mt-12'>
                         <img src={bgChart} alt="background-Chart" className='w-[98%] mx-auto h-[600px] object-cover grayscale'/>
                         <div className='absolute top-0 right-0 bottom-0 left-0 bg-[rgba(206,217,217,0.8)]'></div>
