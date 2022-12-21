@@ -28,11 +28,11 @@ const Singer = () =>{
         }
         singer && fetchDetailArtist()
     },[singer])
-    // console.log(dataSinger);
+    console.log(dataSinger);
     return(
         <div className='flex flex-col w-full relative'>
             {!isLoad ?
-                (<div className="flex h-[60%] items-center justify-center mt-10">
+                (<div className="flex h-[60%] items-center justify-center mt-16">
                     <LoadingSong width={46}/>
                 </div>):
                     <>
@@ -59,7 +59,7 @@ const Singer = () =>{
                                 </div>
                             </div>
                         </div>
-                        <div className='w-full mt-[30px] px-[60px] flex justify-between'>
+                        {dataSinger?.sections ? (<><div className='w-full mt-[30px] px-[60px] flex justify-between'>
                             <div className='w-[40%] flex-auto pr-8'>
                                 <h3 className='text-[20px] mb-5 font-bold'>Bài Hát Mới Nhất</h3>
                                 <div className='flex gap-4 rounded-md bg-[#C4CDCC] p-4 pl-[18px]'>
@@ -125,7 +125,7 @@ const Singer = () =>{
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div></>):<div className='flex h-[60%] items-center justify-center mt-10 text-[28px] font-semibold'>Không có dữ liệu hiển thị</div>}
                         {/* <div className='w-full h-[70px]'></div> */}
                     </>
             }
