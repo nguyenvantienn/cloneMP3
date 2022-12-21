@@ -12,7 +12,7 @@ const Public = () => {
 	return (
 		<div className="w-full h-screen relative flex flex-col bg-main-300">
 			<div className="w-full h-full flex flex-auto">
-				<div className="1130:w-[240px] w-[90px] h-full flex-none">
+				<div className="min-[1130px]:w-[240px] w-[70px] h-full flex-none">
 					<SidebarLeft />
 				</div>
 				<div className="flex-auto flex flex-col">
