@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import {useState} from 'react'
 import { Scrollbars } from "react-custom-scrollbars-2";
+import { useSelector } from "react-redux";
 
 
 import { Player } from "../../components";
@@ -8,6 +9,7 @@ import { Player } from "../../components";
 import { SidebarLeft, SidebarRight,Header } from "../../components";
 const Public = () => {
 	const [showSidebarRight,setShowSidebarRight] = useState(true);
+	const {curSongId} = useSelector(state =>state.music);
 	// console.log(showSidebarRight)
 	return (
 		<div className="w-full h-screen relative flex flex-col bg-main-300">
@@ -32,9 +34,9 @@ const Public = () => {
 					</div> 
 				}
 			</div>
-			<div className="fixed z-50 bottom-0 right-0 left-0 h-[90px]">
+			{curSongId &&<div className="fixed z-50 bottom-0 right-0 left-0 h-[90px]">
 				<Player setShowSidebarRight={setShowSidebarRight}/>
-			</div>
+			</div>}
 		</div>
 	);
 };
