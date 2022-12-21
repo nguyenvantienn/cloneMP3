@@ -10,7 +10,7 @@ const notActiveStyle ='text-[24px] text-black font-semibold cursor-pointer py-[1
 const Search = () =>{
 
     const {keywordSearch} = useSelector(state=>state.music);
-    console.log(keywordSearch);
+    // console.log(keywordSearch);
     
     return (
         <div className='w-full'>
