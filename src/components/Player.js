@@ -253,7 +253,7 @@ const Player =({setShowSidebarRight}) =>{
                     <span>{moment.utc(songInfo?.duration * 1000).format("mm:ss")}</span>
                 </div>
             </div>
-            <div className="w-[30%] flex-auto flex gap-2 items-center justify-end border border-red-200">
+            <div className="w-[30%] flex-auto flex gap-2 items-center justify-end">
                 <span title={volume} onClick={()=>{setVolume(prev => +prev>0?0:+volumeRef.current)}}>{+volume >0 ?<FiVolume2 size={20}/> : <FiVolumeX size={20}/>}</span>
                 <input 
                     title={volume}

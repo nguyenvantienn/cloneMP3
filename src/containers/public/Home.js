@@ -9,7 +9,7 @@ import { SliderBanner ,Section,NewRelease , ChartSection , Artist ,LoadingSong} 
 
 
 const Home =() =>{
-    const {banner,sunday,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight} = useSelector(state =>state.app);
+    const {banner, hArtistTheme,sunday,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight} = useSelector(state =>state.app);
     const Ref = useRef()
     //Setting Slider
     var settings = {
@@ -27,10 +27,11 @@ const Home =() =>{
     return (
             <div ref={Ref} className="overflow-y-auto w-full" >
                 <SliderBanner banner={banner}/>
-                <Section data={sunday}/>
-                <Section data={newEveryday}/>
+                <Section data={hArtistTheme} hiden />
                 <NewRelease />
-                <Section data={top100}/>
+                <Section data={sunday} hiden/>
+                <Section data={newEveryday} hiden/>
+                <Section data={top100} hiden/>
                 <ChartSection />
                 <div className="flex items-center px-[43px] w-full mt-12">
                     {weekChart?.map((item)=>(
@@ -56,8 +57,8 @@ const Home =() =>{
                 </div>
 
                 }
-                <Section data={hAlbum}/>
-                <Section data={corner}/>
+                <Section data={hAlbum} hiden/>
+                <Section data={corner} hiden/>
                 {favoritedArtist && (<div className="mt-12 w-full px-[59px] flex flex-col gap-5">
                     <div className="flex items-center justify-between">
                         <h3 className="text-[20px] font-bold">{favoritedArtist?.title}</h3>

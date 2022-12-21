@@ -116,7 +116,7 @@ const Singer = () =>{
                         <div className='px-[60px] mt-[48px]'>
                             <h3 className="text-lg font-bold mb-5">{`Về ${dataSinger?.name}`}</h3>
                             <div className='flex gap-5 '>
-                                <img src={dataSinger?.cover} alt="thumbnailM" className='w-[45%] flex-none object-cover rounded-md' />
+                                <img src={dataSinger?.cover} alt="thumbnailM" className='w-[45%] h-[400px] flex-none object-cover rounded-md' />
                                 <div className='flex flex-col gap-5 text-sm opacity-80'>
                                     <p dangerouslySetInnerHTML={{ __html : dataSinger?.biography}}></p>
                                     <div className='flex flex-col gap-2'>
