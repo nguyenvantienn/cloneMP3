@@ -12,7 +12,7 @@ const Home =() =>{
     const {banner, hArtistTheme,sunday,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight ,currentWidth} = useSelector(state =>state.app);
     // const Ref = useRef()
     const personal=useMemo(()=>{
-        return currentWidth >1400?7:currentWidth>1200?6:5;
+        return currentWidth >1640?7:currentWidth>1300?6:5;
     },[currentWidth]) 
     //Setting Slider
     var settings = {
