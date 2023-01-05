@@ -147,12 +147,12 @@ const ZingChart = () =>{
                         <RankWeek data={chartData?.RTChart?.items} hidenTitle={false}/>
                     </div>
                     <div className='relative mt-12'>
-                        <img src={bgChart} alt="background-Chart" className='w-[98%] mx-auto h-[600px] object-cover grayscale'/>
+                        <img src={bgChart} alt="background-Chart" className='w-[98%] mx-auto h-[1600px] min-[1200px]:h-[650px] object-cover grayscale'/>
                         <div className='absolute top-0 right-0 bottom-0 left-0 bg-[rgba(206,217,217,0.8)]'></div>
                         {/* <div className='absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-[#CED9D9] to-transparent'></div> */}
                         <div className='absolute flex flex-col top-0 right-0 bottom-2/3 left-0 px-[60px]'>
                             <h3 className='mt-8 mb-[16px] font-bold text-[34px] text-main-500'>Bảng Xếp Hạng Tuần</h3>
-                            <div className='flex gap-[8px] justify-between'>
+                            <div className='flex flex-col min-[1200px]:flex-row gap-[8px] justify-between'>
                                 {chartData?.weekChart && Object.entries(chartData?.weekChart).map((item,index)=>(
                                     <div key={item[1].country} className='flex-1 px-[10px] py-5 bg-[rgba(206,217,217,0.5)] border border-black rounded-md'>
                                         <h3 className='text-[24px] text-main-500 font-semibold px-[20px]'>
