@@ -108,16 +108,16 @@ const ChartSection = () =>{
     const itemSelected = rank?.find(item=>item.encodeId === selected)
     // console.log(itemSelected);
     return(
-        <div className="px-[59px] mt-12 relative w-[1024px] 1600:w-[1130px] mx-auto max-h-[430px]">
-            <img src={bgChart} alt="bg-chart" className="w-full rounded-md object-cover max-h-[430px]" />
+        <div className="px-[59px] mt-12 relative h-[760px] min-[1324px]:max-h-[430px] rounded-md">
+            <img src={bgChart} alt="bg-chart" className="w-full rounded-md object-cover min-[1324px]:max-h-[430px] h-[760px]" />
             <div className="absolute z-10 top-0 right-[59px] bottom-0 left-[59px] bg-[rgba(77,34,104,0.9)] rounded-md"></div>
             <div className="px-2 pt-5 absolute z-20 top-0 right-[59px] bottom-0 left-[59px] flex flex-col gap-8">
                 <Link to={path.ZING_CHART} className='flex gap-1 items-center text-white hover:text-green-700'>
                     <h3 className="text-2xl font-bold">#ZingChart</h3>
                     <span className="text-green p-1 border border-gray-700 rounded-full cursor-pointer bg-white"><BsFillPlayFill size={24} color='green'/></span>
                 </Link>
-                <div className="h-full flex gap-0 text-white items-center">
-                    <div className="flex-3 flex-auto flex flex-col gap-3">
+                <div className="h-full flex min-[1324px]:flex-row flex-col  gap-0 text-white items-center">
+                    <div className="flex-3 flex flex-col gap-3 w-full">
                         {rank?.filter((item,index)=>index<3)?.map((item,i)=>(
                             <SongItem 
                                 key={item.encodeId}
@@ -132,7 +132,7 @@ const ChartSection = () =>{
                         ))}
                         <Link to={path.ZING_CHART} className='text-white w-fit px-4 py-2 mx-auto rounded-l-full rounded-r-full border border-white'>Xem Thêm</Link>
                     </div>
-                    <div className="flex-7 h-[90%] relative">
+                    <div className="flex-7 w-full  order-first min-[1324px]:order-last min-[1324px]:min-w-[500px] relative">
                         {data&&<Line ref={chartRef} data={data} options={options}/>}
                         <div className="tooltip" style={{top: tooltipState.top,left: tooltipState.left,opacity: tooltipState.opacity, position:'absolute'}}>
                             <SongItem

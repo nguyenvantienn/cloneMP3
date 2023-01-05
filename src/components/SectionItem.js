@@ -31,7 +31,7 @@ const SectionItem = ({item, data, style}) => {
             onClick={()=>{
                 navigate(item?.link?.split('.')[0],{state :{ playAlbum : false }});
             }}
-            className ={`flex flex-col items-center gap-2 w-1/5 text-[14px] cursor-pointer ${style?'px-3':''}`}
+            className ={`flex flex-col items-center gap-2 flex-1 text-[14px] cursor-pointer ${style?'px-3':''}`}
         >
             <div 
                 className="w-full relative overflow-hidden rounded-lg"

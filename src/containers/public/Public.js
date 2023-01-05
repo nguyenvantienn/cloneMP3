@@ -29,7 +29,7 @@ const Public = () => {
 					</div>
 				</div>
 				{	showSidebarRight && 
-					<div className="w-[329px] h-screen flex-none hidden 1600:flex animate-slide-left bg-[#DDE4E]">
+					<div className="w-[329px] h-screen flex-none hidden 1400:flex animate-slide-left bg-[#DDE4E]">
 						<SidebarRight />
 					</div> 
 				}

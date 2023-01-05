@@ -1,5 +1,5 @@
 
-import React,{ useEffect } from 'react';
+import React,{ useCallback, useEffect, useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import {Routes,Route,Link} from 'react-router-dom'
 
@@ -8,11 +8,30 @@ import path from './ultis/path';
 import * as actions from './store/actions'
 
 function App() {
-
-  const dispatch = useDispatch()
+  const [currentWidth ,setCurrentWidth] = useState(window.innerWidth);
+  const dispatch = useDispatch();
   useEffect(()=>{
     dispatch(actions.getHome())
   },[])
+
+  //Set width khi resize
+  // const setWidth= useCallback((e)=>{
+  //   setCurrentWidth(e.target.innerWidth)
+  // },[e.target.innerWidth])
+  const setWidth =(e) =>{
+    setCurrentWidth(e.target.innerWidth);
+  }
+
+  //Set lai width khi resize
+  useEffect(()=>{
+    window.addEventListener('resize',setWidth);
+    return ()=>{
+      window.removeEventListener('resize',setWidth);
+    }
+  })
+  useEffect(()=>{
+    dispatch(actions.setCurrentWidth(currentWidth))
+  },[currentWidth,dispatch]);
 
   return (
     <>

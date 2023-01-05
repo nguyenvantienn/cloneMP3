@@ -14,6 +14,7 @@ const initState={
     chart :null,
     rank : [],
     artistSpotlight : null,
+    currentWidth: null
 }
 
 const appReducer =(state= initState,action) =>{
@@ -34,6 +35,11 @@ const appReducer =(state= initState,action) =>{
                 chart :action.homeData?.find((item) => item.sectionId === 'hZC')?.chart || null,
                 rank :action.homeData?.find((item) => item.sectionId === 'hZC')?.items || null,
                 artistSpotlight : action.homeData?.find((item) => item.sectionType === 'artistSpotlight')?.items || null,
+            }
+        case actionTypes.CURRENT_WIDTH :
+            return{
+                ...state,
+                currentWidth:action.payload,
             }
         default:
             return state;

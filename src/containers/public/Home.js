@@ -1,4 +1,4 @@
-import { useEffect ,useRef} from "react"
+import { useEffect ,useMemo,useRef} from "react"
 import { useSelector } from "react-redux";
 import {Link} from 'react-router-dom'
 import Sliders from 'react-slick'
@@ -9,25 +9,28 @@ import { SliderBanner ,Section,NewRelease , ChartSection , Artist ,LoadingSong} 
 
 
 const Home =() =>{
-    const {banner, hArtistTheme,sunday,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight} = useSelector(state =>state.app);
-    const Ref = useRef()
+    const {banner, hArtistTheme,sunday,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight ,currentWidth} = useSelector(state =>state.app);
+    // const Ref = useRef()
+    const personal=useMemo(()=>{
+        return currentWidth >1400?7:currentWidth>1200?6:5;
+    },[currentWidth]) 
     //Setting Slider
     var settings = {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 7,
-        slidesToScroll: 7
+        slidesToShow: personal,
+        slidesToScroll: personal
     };
     // useEffect(()=>{
-        Ref.current && Ref.current.scrollIntoView({behavior : 'smooth', block:'start', inline:'nearest'})
+        // Ref.current && Ref.current.scrollIntoView({behavior : 'smooth', block:'start', inline:'nearest'})
     // },[])
     // console.log('reder');
     // console.log(!banner);
     return (
         <>
             { (banner && hArtistTheme && sunday && newEveryday && top100 && hAlbum && corner  && weekChart ) ?
-                <div ref={Ref} className="overflow-y-auto w-full" >
+                <div className="overflow-y-auto w-full" >
                     <SliderBanner banner={banner}/>
                     <Section data={hArtistTheme} hiden />
                     <NewRelease />
