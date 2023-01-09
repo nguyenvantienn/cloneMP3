@@ -18,7 +18,7 @@ const Lists = ({ totalDuration }) => {
 		<div className="flex flex-col w-full h-full text-gray-600 text-[14px] ">
 			<div className="flex justify-between items-center p-[10px] font-semibold">
 				<span>BÀI HÁT</span>
-				<span>ALBUM</span>
+				<span className='hidden min-[770px]:flex'>ALBUM</span>
 				<span>THỜI GIAN</span>
 			</div>
 			<Scrollbars autoHide style={{ width: "100%", height: "75%" }}>

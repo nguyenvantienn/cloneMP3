@@ -56,13 +56,13 @@ const Album = () => {
 					<LoadingSong width={46}/>
 				</div>
 			) : (
-				<div className="mt-6 flex w-full h-[85%] px-[59px]">
-					<div className="flex-none w-1/4 h-full pr-6 flex flex-col items-center gap-2">
+				<div className="mt-6 flex max-[1200px]:flex-col w-full h-[100%] px-[59px]">
+					<div className="flex-none w-full min-[1200px]:w-1/4 h-[200px] min-[1200px]:h-full pr-6 flex min-[1200px]:flex-col  min-[1200px]:items-center gap-2">
 						<div className="relative">
 							<img
 								src={playlistData?.thumbnailM}
 								alt="thumbnail"
-								className={`w-full object-cover ${
+								className={`w-full max-[1200px]:w-[200px] max-[1200px]:h-[200px] object-cover ${
 									isPlaying
 										? "rounded-full animate-rotate-center"
 										: "rounded:md animate-rotate-center-pause"
@@ -82,7 +82,7 @@ const Album = () => {
 								</span>
 							</div>
 						</div>
-						<div className="flex flex-col items-center">
+						<div className="flex flex-col min-[1200px]:items-center">
 							<h3 className="text-[20px] font-bold text-gray-700">
 								{playlistData?.title}
 							</h3>

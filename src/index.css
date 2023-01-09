@@ -42,3 +42,10 @@ code {
 .slick-prev{
   left: -20px !important;;
 }
+
+
+.slick-slider .slick-track{
+  align-items :stretch !important;
+  display: flex;
+  /* background-color: gray; */
+}

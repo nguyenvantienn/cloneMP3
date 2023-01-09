@@ -28,7 +28,7 @@ const Singer = () =>{
         }
         singer && fetchDetailArtist()
     },[singer])
-    console.log(dataSinger);
+    // console.log(dataSinger);
     return(
         <div className='flex flex-col w-full relative'>
             {!isLoad ?
@@ -62,7 +62,7 @@ const Singer = () =>{
                         {dataSinger?.sections ? (<><div className='w-full mt-[30px] px-[60px] flex justify-between'>
                             <div className='w-[40%] flex-auto pr-8'>
                                 <h3 className='text-[20px] mb-5 font-bold'>Bài Hát Mới Nhất</h3>
-                                <div className='flex gap-4 rounded-md bg-[#C4CDCC] p-4 pl-[18px]'>
+                                <div className='flex max-[1100px]:flex-col gap-4 rounded-md bg-[#C4CDCC] p-4 pl-[18px]'>
                                     <img src={dataSinger?.sections[0]?.items[0]?.thumbnail} alt="Thubnail" className='w-[151px] h-[151px] object-cover rounded-md' />
                                     <div className='flex flex-col text-xs text-black gap-[3px] opacity-80 pt-[16px]'>
                                         <div className='flex flex-col mt-[4px]'>

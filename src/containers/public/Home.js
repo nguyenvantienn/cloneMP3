@@ -48,7 +48,7 @@ const Home =() =>{
                     {  artistSpotlight && <div className="px-[60px] w-full mt-12">
                         <Sliders {...settings}>
                             {artistSpotlight?.map(item=>(
-                                <div key={item.id} className='px-[12px]'>
+                                <div key={item.id} className='px-[12px] '>
                                     <Artist
                                         image={item.thumbnail}
                                         title = {item.name}

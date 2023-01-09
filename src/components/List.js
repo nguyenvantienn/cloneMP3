@@ -1,6 +1,6 @@
 import { memo } from "react";
 import moment from "moment";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 
 import icons from "../ultis/icon";
 import * as actions from "../store/actions";
@@ -8,7 +8,9 @@ import * as actions from "../store/actions";
 const { BsMusicNoteBeamed } = icons;
 
 const List = ({ songData , hiden ,hidenTitle , order, numberCut}) => {
+
 	const dispatch = useDispatch();
+	// const {currentWidth} = useSelector(state => state.app);
 	// console.log(songData);
 	const cutTitle = numberCut || 25;
 	return (
@@ -47,7 +49,7 @@ const List = ({ songData , hiden ,hidenTitle , order, numberCut}) => {
 				</div>
 			</div>
 			{hidenTitle?'':
-			<div className={`flex-1 flex items-center justify-center text-sm`}>
+			<div className={`flex-1 hidden min-[770px]:flex items-center justify-center text-sm `}>
 				{songData?.album?.title.length > 25
 					? `${songData?.album?.title.slice(0, 25)}...`
 					: songData?.album?.title}
