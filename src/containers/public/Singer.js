@@ -99,25 +99,26 @@ const Singer = () =>{
                         {dataSinger?.sections.filter((item)=>item.sectionType === 'playlist').map((item)=><Section key={item.title} data={item} flexStart/>)}
                         <div className="flex flex-col w-full px-[60px] mt-[30px]">
                             <h3 className="text-lg font-bold mb-5">{dataSinger?.sections?.find(item => item.sectionType === 'artist')?.title}</h3>
-                            <div className="flex gap-[20px]">
+                            <div className="flex w-full ">
                                 {dataSinger?.sections?.find(item => item.sectionType === 'artist')?.items?.filter((item,index)=>index<5).map((item) =>(
-                                    // <div key={item.encodeId} className={`flex-auto ${index%2?'pl-2':'pr-2'}`}>
+                                    <div key={item.id} className='w-1/5 px-[12px]'>
                                         <Artist 
-                                            key={item.id}
+                                            // key={item.id}
                                             image={item.thumbnailM}
                                             title={item.name}
                                             follower={item.totalFollow}
                                             link={item.link}
+                                            setwidth
                                         />
-                                    // </div>
+                                    </div>
                                 ))}
                             </div>
                         </div>
                         <div className='px-[60px] mt-[48px]'>
                             <h3 className="text-lg font-bold mb-5">{`Về ${dataSinger?.name}`}</h3>
-                            <div className='flex gap-5 '>
-                                <img src={dataSinger?.cover} alt="thumbnailM" className='w-[45%] h-[400px] flex-none object-cover rounded-md' />
-                                <div className='flex flex-col gap-5 text-sm opacity-80'>
+                            <div className='flex max-[800px]:flex-col gap-5 '>
+                                <img src={dataSinger?.cover} alt="thumbnailM" className='w-[400px] h-[400px] flex-none object-cover rounded-md' />
+                                <div className='flex flex-col flex-auto gap-5 text-sm opacity-80'>
                                     <p dangerouslySetInnerHTML={{ __html : dataSinger?.biography}}></p>
                                     <div className='flex flex-col gap-2'>
                                         <span className='text-[20px] font-bold'>{Number(dataSinger?.follow?.toFixed(1)).toLocaleString()}</span>

@@ -22,7 +22,7 @@ const Lists = ({ totalDuration }) => {
 				<span>THỜI GIAN</span>
 			</div>
 			<Scrollbars autoHide style={{ width: "100%", height: "75%" }}>
-				<div className="flex flex-col">
+				<div className="flex flex-col max-w-[100%]">
 					{playlist?.map((song) => {
 						return <List songData={song} key={song?.encodeId} />;
 					})}

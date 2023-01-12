@@ -16,7 +16,7 @@ const NewRelease = () =>{
 
     // console.log(songs);
     return (
-        <div className="mt-[12px] px-[59px] flex flex-col gap-5" >
+        <div className="mt-[12px] px-[59px] flex flex-col gap-5 w-full" >
             <div className="flex items-center justify-between">
                 <h3 className="text-[20px] font-bold">{newRelease?.title}</h3>
                 <span className="text-xs">TẤT CẢ</span>

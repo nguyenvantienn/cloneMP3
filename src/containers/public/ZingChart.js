@@ -122,8 +122,8 @@ const ZingChart = () =>{
     return(
         <div className='w-full'>
             {!isLoad ? <div className='flex justify-center mt-20'><LoadingSong width='48px'/></div>:
-                <div className='flex flex-col'>
-                    <div className='relative'>
+                <div className='flex flex-col w-full'>
+                    <div className='relative w-full'>
                         <img src={bgChart} alt="background-Chart" className='w-[98%] mx-auto h-[500px] object-cover grayscale'/>
                         <div className='absolute top-0 right-0 bottom-0 left-0 bg-[rgba(206,217,217,0.8)]'></div>
                         <div className='absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-[#CED9D9] to-transparent'></div>
@@ -146,15 +146,15 @@ const ZingChart = () =>{
                     <div className='px-[60px] mt-12'>
                         <RankWeek data={chartData?.RTChart?.items} hidenTitle={false}/>
                     </div>
-                    <div className='relative mt-12'>
+                    <div className='relative mt-12 w-full'>
                         <img src={bgChart} alt="background-Chart" className='w-[98%] mx-auto h-[1600px] min-[1200px]:h-[650px] object-cover grayscale'/>
                         <div className='absolute top-0 right-0 bottom-0 left-0 bg-[rgba(206,217,217,0.8)]'></div>
                         {/* <div className='absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-t from-[#CED9D9] to-transparent'></div> */}
-                        <div className='absolute flex flex-col top-0 right-0 bottom-2/3 left-0 px-[60px]'>
+                        <div className='w-full absolute flex flex-col top-0 right-0 bottom-2/3 left-0 px-[60px]'>
                             <h3 className='mt-8 mb-[16px] font-bold text-[34px] text-main-500'>Bảng Xếp Hạng Tuần</h3>
-                            <div className='flex flex-col min-[1200px]:flex-row gap-[8px] justify-between'>
+                            <div className='flex flex-col w-full min-[1200px]:flex-row gap-[8px] justify-between'>
                                 {chartData?.weekChart && Object.entries(chartData?.weekChart).map((item,index)=>(
-                                    <div key={item[1].country} className='flex-1 px-[10px] py-5 bg-[rgba(206,217,217,0.5)] border border-black rounded-md'>
+                                    <div key={item[1].country} className='flex-1  min-[1200px]:max-w-[33%] px-[10px] py-5 bg-[rgba(206,217,217,0.5)] border border-black rounded-md'>
                                         <h3 className='text-[24px] text-main-500 font-semibold px-[20px]'>
                                             {item[0] ==='vn'?'Việt Nam':item[0]==='us'?'US-UK':item[0]==='korea'?'K-POP':item[0]}
                                         </h3>

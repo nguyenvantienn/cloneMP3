@@ -10,7 +10,7 @@ const Artist = ({image, title, follower, link ,setwidth}) =>{
     const [isHover,setIsHover] = useState(false);
 
     return(
-        <div className={`${setwidth?'w-full':'w-1/5'} flex flex-col items-center justify-between gap-[15px] cursor-pointer`}>
+        <div className={`${setwidth?'w-full':'w-1/5'} flex flex-col items-center gap-[15px] cursor-pointer`}>
             <Link
                 to={link} 
                 onMouseEnter={()=>{setIsHover(true)}}
@@ -20,8 +20,8 @@ const Artist = ({image, title, follower, link ,setwidth}) =>{
                 <img src={image} alt="Avarta-singer" className={`w-full object-contain rounded-full ${isHover?'animate-scale-up-image':'animate-scale-down-image'}`} />
                 { isHover?<div className="absolute top-0 right-0 left-0 bottom-0 bg-overlay-30 rounded-full"></div>:''}
             </Link>
-            <div className="flex flex-col items-center gap-1">
-                <Link to={link} className="text-sm font-medium text-center hover:underline hover:text-main-500">{title}</Link>
+            <div className="flex w-full flex-col items-center gap-1">
+                <Link to={link} className="w-full text-sm font-medium text-center hover:underline hover:text-main-500 truncate">{title}</Link>
                 <span className="text-xs opacity-70">{handleNumber(follower)}</span>
                 <button
                     type="button"
