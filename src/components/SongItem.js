@@ -29,6 +29,7 @@ const SongItem = ({thumbnail , artistsNames ,encodeId, title ,releaseDate ,isPri
                 </div>
                 <div className="max-w-[100%] flex flex-col flex-auto">
                     <span className="w-full text-[14px] font-semibold truncate">{title?.length>20?`${title?.slice(0,20)}...`:title} {isPrivate?'(Vip)':''}</span>
+                    {/* <span className="w-full text-[14px] font-semibold truncate">{title} {isPrivate?'(Vip)':''}</span> */}
                     <span className="w-full text-[12px] opacity-70 truncate">{artistsNames}</span>
                     { releaseDate&&<span className="text-12 text-gray-700">{moment.utc(releaseDate * 1000).fromNow()}</span> }
                 </div>

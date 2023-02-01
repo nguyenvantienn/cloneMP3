@@ -15,10 +15,10 @@ const SearchAll = () =>{
         <>
         {searchData ?
             (<div className="w-full flex flex-col gap-[30px] px-[60px]">
-                <div className="flex flex-col">
+                <div className="flex flex-col w-full">
                     <h3 className="text-lg font-bold mb-5">Nổi bật</h3>
-                    <div className="flex gap-8">
-                        {searchData?.top && <NavLink to={searchData?.top?.link} className="p-[10px] flex-1 bg-main-200 rounded-md flex gap-8 items-center cursor-pointer">
+                    <div className="flex w-full gap-8">
+                        {searchData?.top && <NavLink to={searchData?.top?.link} className="p-[10px] flex-1 w-[30%] bg-main-200 rounded-md flex gap-8 items-center cursor-pointer">
                             <img src={searchData.top.thumbnail} alt="avatar" className={`w-[84px] h-[84px] object-cover ${searchData.top.objectType === 'artist' ? 'rounded-full':''}`} />    
                             <div className="flex flex-col text-xs">
                                 <span className="mb-[6px]">{searchData.top.objectType === 'artist' ? 'Nghệ sĩ':''}</span>
@@ -28,7 +28,7 @@ const SearchAll = () =>{
                         </NavLink>}
                         {searchData?.songs?.filter((item,index)=>index<2).map((item)=>{
                             return(
-                                <div key={item.encodeId} className="p-[10px] flex-1 bg-main-200 rounded-md flex gap-8 items-center">
+                                <div key={item.encodeId} className="p-[10px] flex-1 w-[30%] bg-main-200 rounded-md flex gap-8 items-center">
                                     <SongItem
                                         thumbnail ={item.thumbnail} 
                                         artistsNames ={item.artistsNames}

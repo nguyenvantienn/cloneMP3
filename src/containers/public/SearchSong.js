@@ -1,5 +1,5 @@
 
-import { useState,useEffect } from "react";
+import { useState,useEffect, memo } from "react";
 import { useSelector } from "react-redux";
 
 import { List, LoadingSong } from "../../components";
@@ -45,4 +45,4 @@ const SearchSong = () =>{
     )
 }
 
-export default SearchSong;
+export default memo(SearchSong);

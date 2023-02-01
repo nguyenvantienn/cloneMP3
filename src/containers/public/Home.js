@@ -29,7 +29,9 @@ const Home =() =>{
     // console.log(!banner);
     return (
         <>
-            { (banner && hArtistTheme && sunday && newEveryday && top100 && hAlbum && corner  && weekChart ) ?
+            { 
+            // (banner && hArtistTheme && sunday && newEveryday && top100 || hAlbum || corner  || weekChart ) ?
+            (banner && hArtistTheme && sunday && newEveryday && top100 && weekChart  ) ?
                 <div className="overflow-y-auto w-full" >
                     <SliderBanner banner={banner}/>
                     <Section data={hArtistTheme} hiden />
@@ -88,7 +90,7 @@ const Home =() =>{
                     </div>)}
                     {/* Home */}
                     {/* <div className="w-full h-[500px]"></div> */}
-                </div> : <div className="w-full h-[60%] flex justify-center items-center"><LoadingSong width={58}/></div>
+                </div> : <div className="w-full h-[60%] flex justify-center items-center"><LoadingSong width={48}/></div>
             }
         </>
     )

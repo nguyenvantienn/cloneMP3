@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect,memo } from "react";
 import { useSelector } from "react-redux";
 
 import * as apis from '../../apis'
@@ -43,4 +43,4 @@ const SearchPlaylist = () =>{
     )
 }
 
-export default SearchPlaylist;
+export default memo(SearchPlaylist);
