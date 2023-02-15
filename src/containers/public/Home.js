@@ -31,7 +31,7 @@ const Home =() =>{
         <>
             { 
             // (banner && hArtistTheme && sunday && newEveryday && top100 || hAlbum || corner  || weekChart ) ?
-            (banner && hArtistTheme && sunday && newEveryday && top100 && weekChart  ) ?
+            (banner && hArtistTheme && sunday && newEveryday && top100 && weekChart ) ?
                 <div className="overflow-y-auto w-full" >
                     <SliderBanner banner={banner}/>
                     <Section data={hArtistTheme} hiden />
@@ -90,7 +90,11 @@ const Home =() =>{
                     </div>)}
                     {/* Home */}
                     {/* <div className="w-full h-[500px]"></div> */}
-                </div> : <div className="w-full h-[60%] flex justify-center items-center"><LoadingSong width={48}/></div>
+                </div> : <div className="w-full h-[60%] flex flex-col justify-center items-center gap-2">
+                        <h3 className="text-2xl">Trang Web sẽ mất chút thời gian để khởi động...</h3>
+                        <h2 className="text-2xl">Xin quý khách chờ trong giây lát . Xin lỗi quý khách về sự bất tiện này</h2>
+                        <LoadingSong width={48}/>
+                    </div>
             }
         </>
     )
