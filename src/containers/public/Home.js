@@ -32,14 +32,14 @@ const Home =() =>{
         <>
             { 
             // (banner && hArtistTheme && sunday && newEveryday && top100 || hAlbum || corner  || weekChart ) ?
-            (banner && hArtistTheme && sunday && newEveryday && top100 && weekChart ) ?
+            (banner || hArtistTheme || sunday || newEveryday || top100 || weekChart ) ?
                 <div className="overflow-y-auto w-full" >
-                    <SliderBanner banner={banner}/>
-                    <Section data={hArtistTheme} hiden />
+                    {banner && <SliderBanner banner={banner}/> }
+                    {hArtistTheme && <Section data={hArtistTheme} hiden />}
                     <NewRelease />
-                    <Section data={sunday} hiden/>
-                    <Section data={newEveryday} hiden/>
-                    <Section data={top100} hiden/>
+                    {sunday && <Section data={sunday} hiden/> }
+                    {newEveryday && <Section data={newEveryday} hiden/>}
+                    {top100 && <Section data={top100} hiden/> }
                     <ChartSection />
                     <div className="flex items-center px-[43px] w-full mt-12">
                         {weekChart?.map((item)=>(
