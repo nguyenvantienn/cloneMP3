@@ -22,6 +22,7 @@ const Home =() =>{
         slidesToShow: personal,
         slidesToScroll: personal
     };
+    console.log({banner ,hArtistTheme , sunday , newEveryday , top100 , weekChart});
     // useEffect(()=>{
         // Ref.current && Ref.current.scrollIntoView({behavior : 'smooth', block:'start', inline:'nearest'})
     // },[])
@@ -92,7 +93,7 @@ const Home =() =>{
                     {/* <div className="w-full h-[500px]"></div> */}
                 </div> : <div className="w-full h-[60%] flex flex-col justify-center items-center gap-2">
                         <h3 className="text-2xl">Trang Web sẽ mất chút thời gian để khởi động...</h3>
-                        <h2 className="text-2xl mb-2">Xin quý khách chờ trong giây lát . Xin lỗi quý khách về sự bất tiện này</h2>
+                        <h2 className="text-2xl mb-2">Xin vui lòng chờ trong giây lát . Xin về sự bất tiện này</h2>
                         <LoadingSong width={48}/>
                     </div>
             }
