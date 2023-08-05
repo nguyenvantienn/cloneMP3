@@ -22,7 +22,7 @@ const Home =() =>{
         slidesToShow: personal,
         slidesToScroll: personal
     };
-    console.log({banner ,hArtistTheme , sunday , newEveryday , top100 , weekChart});
+    console.log({banner, hArtistTheme,sunday,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight});
     // useEffect(()=>{
         // Ref.current && Ref.current.scrollIntoView({behavior : 'smooth', block:'start', inline:'nearest'})
     // },[])
@@ -32,7 +32,7 @@ const Home =() =>{
         <>
             { 
             // (banner && hArtistTheme && sunday && newEveryday && top100 || hAlbum || corner  || weekChart ) ?
-            (banner || hArtistTheme || sunday || newEveryday || top100 || weekChart ) ?
+            (banner && top100 && weekChart  && hArtistTheme || sunday || newEveryday  ) ?
                 <div className="overflow-y-auto w-full" >
                     {banner && <SliderBanner banner={banner}/> }
                     {hArtistTheme && <Section data={hArtistTheme} hiden />}
