@@ -31,7 +31,7 @@ const Home =() =>{
             { 
             // (banner && hArtistTheme && sunday && newEveryday && top100 || hAlbum || corner  || weekChart ) ?
             (banner && top100 && weekChart  && hArtistTheme || sunday || newEveryday  ) ?
-                <div className="overflow-y-auto w-full" >
+                <div className="overflow-y-auto w-full overflow-x-hidden" >
                     {banner && <SliderBanner banner={banner}/> }
                     {hArtistTheme && <Section data={hArtistTheme} hiden />}
                     <NewRelease />
