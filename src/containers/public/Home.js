@@ -9,7 +9,7 @@ import { SliderBanner ,Section,NewRelease , ChartSection , Artist ,LoadingSong} 
 
 
 const Home =() =>{
-    const {banner, hArtistTheme,sunday,hEditorTheme,hEditorTheme3,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight ,currentWidth} = useSelector(state =>state.app);
+    const {banner, hArtistTheme,sunday,hEditorTheme,hEditorTheme2,hEditorTheme3,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight ,currentWidth} = useSelector(state =>state.app);
     // const Ref = useRef()
     const personal=useMemo(()=>{
         return currentWidth >1640?7:currentWidth>1300?6:5;
@@ -37,6 +37,7 @@ const Home =() =>{
                     <NewRelease />
                     {sunday && <Section data={sunday} hiden/> }
                     {hEditorTheme && <Section data={hEditorTheme} hiden/> }
+                    {hEditorTheme2 && <Section data={hEditorTheme2} hiden/> }
                     {hEditorTheme3 && <Section data={hEditorTheme3} hiden/> }
                     {newEveryday && <Section data={newEveryday} hiden/>}
                     {top100 && <Section data={top100} hiden/> }
