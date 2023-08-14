@@ -132,7 +132,7 @@ const ChartSection = () =>{
                         ))}
                         <Link to={path.ZING_CHART} className='text-white w-fit px-4 py-2 mx-auto rounded-l-full rounded-r-full border border-white'>Xem Thêm</Link>
                     </div>
-                    <div className="flex-7 w-full h-full order-first min-[1324px]:order-last min-[1324px]:min-w-[500px] relative">
+                    <div className="flex-7 w-full h-full order-first min-[1324px]:order-last min-[1324px]:min-w-[300px] relative">
                         {data&&<Line ref={chartRef} data={data} options={options}/>}
                         <div className="tooltip" style={{top: tooltipState.top,left: tooltipState.left,opacity: tooltipState.opacity, position:'absolute'}}>
                             <SongItem

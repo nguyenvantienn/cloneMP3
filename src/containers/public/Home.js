@@ -22,12 +22,10 @@ const Home =() =>{
         slidesToShow: personal,
         slidesToScroll: personal
     };
-    console.log({banner, hArtistTheme,sunday,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight});
+    //console.log({banner, hArtistTheme,sunday,newEveryday,top100,hAlbum,corner ,weekChart, favoritedArtist , artistSpotlight});
     // useEffect(()=>{
         // Ref.current && Ref.current.scrollIntoView({behavior : 'smooth', block:'start', inline:'nearest'})
     // },[])
-    // console.log('reder');
-    // console.log(!banner);
     return (
         <>
             { 
